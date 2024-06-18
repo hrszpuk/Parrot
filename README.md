@@ -9,3 +9,8 @@ The Enhanced Democracy and Warfare mod for the colony sim Planet S.
 - Organise formation of spaceships within squads/groups/etc
 - Create patrols around planets
 - Configure defence/shoot-on-sight areas around planets, ships, and squads/groups/etc
+- Planetary warning systems, weapons systems, and other defenses
+- Custom trade routes
+- Adversary index
+-  
+
