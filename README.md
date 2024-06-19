@@ -1,5 +1,5 @@
 # Enhanced Democracy and Warfare
-The Enhanced Democracy and Warfare mod for the colony sim Planet S.
+The Enhanced Democracy and Warfare mod in
 
 ## Features
 - Declare condition-based war
@@ -12,5 +12,5 @@ The Enhanced Democracy and Warfare mod for the colony sim Planet S.
 - Planetary warning systems, weapons systems, and other defenses
 - Custom trade routes
 - Adversary index
--  
+  
 
