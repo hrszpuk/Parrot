@@ -1,16 +1,2 @@
-# Enhanced Democracy and Warfare
-The Enhanced Democracy and Warfare mod in
-
-## Features
-- Declare condition-based war
-- Create contracts between players (and bots)
-- Create alliances and pacts
-- Organise spaceships into squads, groups, corps, and fleets
-- Organise formation of spaceships within squads/groups/etc
-- Create patrols around planets
-- Configure defence/shoot-on-sight areas around planets, ships, and squads/groups/etc
-- Planetary warning systems, weapons systems, and other defenses
-- Custom trade routes
-- Adversary index
-  
-
+# Machine Learning Password List Generator
+Object: scrape personal data from social media, etc, and use a machine learning model to convert the data into a keyword list.
