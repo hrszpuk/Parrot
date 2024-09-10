@@ -8,3 +8,6 @@ Modules:
 
 import core
 import gui
+
+if __name__ == "__main__":
+    print("This is the parrot package. Please run the main.py file to start the application.")
