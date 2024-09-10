@@ -8,6 +8,3 @@ Modules:
 
 import core
 import gui
-
-core.test()
-gui.test()
