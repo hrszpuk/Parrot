@@ -1,6 +1,4 @@
 """
-This is the core module for parrot.
+This is the core module for parrot. This module contains all the "business" logic used in the application.
 """
-
-def test():
-    """Tests the parrot module."""
+from . import manager
