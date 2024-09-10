@@ -1,2 +1,9 @@
 # Parrot
-Parrot scans social media profiles for data then uses a machine learning model to generate a list of passwords that may be used for brute forcing.
+Download and run open-source models on your own hardware. Use a simple, sleek interface for your own personal chatbots and generative ai.
+
+
+## Installation
+
+
+
+## Contributing 
