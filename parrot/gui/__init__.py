@@ -1,6 +1,8 @@
 """
 This is the GUI module for parrot.
 """
-
-def test():
-    """Tests the GUI module"""
+from .main_window import MainWindow
+from .dialogs import *
+from .widgets import *
+from .resources import *
+from .layouts import *
