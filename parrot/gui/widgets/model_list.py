@@ -4,7 +4,7 @@ from PySide6.QtWidgets import QListView, QListWidget, QVBoxLayout, QWidget, QLab
 
 
 class ModelList(QWidget):
-    model_selected_signal = Signal(str, QPushButton)
+    model_selected_signal = Signal(str)
 
     def __init__(self):
         super().__init__()
@@ -12,20 +12,20 @@ class ModelList(QWidget):
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
 
-        self.list = QListWidget()
         self.title = QLabel("Models")
-
         self.layout.addWidget(self.title)
-        self.layout.addWidget(self.list)
 
         models = ["Model 1", "Model 2", "Model 3"]
         for model in models:
-            item = QListWidgetItem()
             button = QPushButton(model)
-            button.clicked.connect(self.item_selected)
-            self.list.addItem(item)
-            self.list.setItemWidget(item, button)
+            button.clicked.connect(self.model_button_pressed)
+            self.layout.addWidget(button)
 
-    def item_selected(self):
-        print(f"Selected: {self.sender().setVisible(False)}")
-        pass
+    def model_button_pressed(self, model_name):
+        """Return a slot that emits the model name when the button is clicked."""
+
+        def slot():
+            print(f"Selected: {model_name}")
+            self.model_selected_signal.emit(model_name)
+
+        return slot
