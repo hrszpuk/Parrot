@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import *
 
 from parrot.gui.widgets.chat_window import ChatWindow
+from parrot.gui.widgets.sidebar import Sidebar
 
 
 class MainWindow(QMainWindow):
@@ -8,12 +9,13 @@ class MainWindow(QMainWindow):
         super().__init__()
 
         self.setWindowTitle("Parrot")
-        self.setGeometry(600, 100, 1600, 900)  # Position and size (x, y, width, height)
+        self.setGeometry(600, 100, 1600, 900)
         self.show()
-        self.setup_ui()
 
-    def setup_ui(self):
         main_layout = QHBoxLayout()
+
+        sidebar_widget = Sidebar()
+        main_layout.addWidget(sidebar_widget)
 
         chat_window = ChatWindow()
         chat_window.add_message("Hello?", is_user=False)
@@ -23,4 +25,5 @@ class MainWindow(QMainWindow):
 
         widget = QWidget()
         widget.setLayout(main_layout)
+
         self.setCentralWidget(widget)
