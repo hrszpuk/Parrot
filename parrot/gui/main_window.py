@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import *
 
 from parrot.gui.widgets.chat_window import ChatWindow
+from parrot.gui.widgets.settings_menu import SettingsMenu
 from parrot.gui.widgets.sidebar import Sidebar
 
 
@@ -9,21 +10,40 @@ class MainWindow(QMainWindow):
         super().__init__()
 
         self.setWindowTitle("Parrot")
-        self.setGeometry(600, 100, 1600, 900)
+        self.setGeometry(600, 100, 1400, 800)
         self.show()
 
-        main_layout = QHBoxLayout()
+        self.main_layout = QHBoxLayout()
 
-        sidebar_widget = Sidebar()
-        main_layout.addWidget(sidebar_widget)
+        self.sidebar_widget = Sidebar()
+        self.main_layout.addWidget(self.sidebar_widget)
 
-        chat_window = ChatWindow()
-        chat_window.add_message("Hello?", is_user=False)
-        chat_window.add_message("Hello?", is_user=True)
-        chat_window.add_message("Hello?", is_user=False)
-        main_layout.addWidget(chat_window)
+        self.sidebar_widget.bottom.settings_clicked.connect(self.open_settings_menu)
+
+        self.chat_window = ChatWindow()
+        self.chat_window.add_message("Hello?", is_user=False)
+        self.chat_window.add_message("Hello?", is_user=True)
+        self.chat_window.add_message("Hello?", is_user=False)
+        self.main_layout.addWidget(self.chat_window)
+
+        self.settings_menu = SettingsMenu()
+        self.settings_menu.settings_closed.connect(self.show_main_content)
+        self.settings_menu.setVisible(False)
+
+        self.main_layout.addWidget(self.settings_menu)
 
         widget = QWidget()
-        widget.setLayout(main_layout)
+        widget.setLayout(self.main_layout)
 
         self.setCentralWidget(widget)
+
+    def open_settings_menu(self):
+        self.chat_window.setVisible(False)
+        self.sidebar_widget.setVisible(False)
+
+        self.settings_menu.setVisible(True)
+
+    def show_main_content(self):
+        self.settings_menu.setVisible(False)
+        self.chat_window.setVisible(True)
+        self.sidebar_widget.setVisible(True)
