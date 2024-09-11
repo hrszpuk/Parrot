@@ -25,7 +25,6 @@ class ModelList(QWidget):
         """Return a slot that emits the model name when the button is clicked."""
 
         def slot():
-            print(f"Selected: {model_name}")
             self.model_selected_signal.emit(model_name)
 
         return slot
