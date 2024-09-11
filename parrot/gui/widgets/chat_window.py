@@ -1,21 +1,20 @@
-from PySide6.QtWidgets import QWidget, QVBoxLayout
+from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel
 
 from parrot.gui.widgets.chat_box import ChatBox
 from parrot.gui.widgets.chat_message import ChatMessage
 from parrot.gui.widgets.chat_message_list import ChatMessageList
 
 
+# The rest of your code remains unchanged
 class ChatWindow(QWidget):
     def __init__(self):
         super().__init__()
 
         layout = QVBoxLayout()
 
-        # Create the message list
         self.message_list = ChatMessageList()
         layout.addWidget(self.message_list)
 
-        # Create the input box
         self.chat_box = ChatBox()
         layout.addWidget(self.chat_box)
 

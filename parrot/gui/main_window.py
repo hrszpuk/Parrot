@@ -16,11 +16,10 @@ class MainWindow(QMainWindow):
         main_layout = QHBoxLayout()
 
         chat_window = ChatWindow()
-        chat_window.add_message("Hello! How can I assist you today?",
-                                is_user=False)  # TODO maybe change this to a pytest?
-        chat_window.add_message("I'm looking for some help.", is_user=True)
-
-        main_layout.addWidget(ChatWindow())
+        chat_window.add_message("Hello?", is_user=False)
+        chat_window.add_message("Hello?", is_user=True)
+        chat_window.add_message("Hello?", is_user=False)
+        main_layout.addWidget(chat_window)
 
         widget = QWidget()
         widget.setLayout(main_layout)
