@@ -5,7 +5,7 @@ from PySide6.QtWidgets import QWidget, QHBoxLayout, QPushButton
 class BottomBar(QWidget):
     settings_clicked = Signal()
     theme_clicked = Signal()
-    search_clicked = Signal()
+    ai_model_manager_clicked = Signal()
 
     def __init__(self):
         super().__init__()
@@ -20,8 +20,8 @@ class BottomBar(QWidget):
         theme_button.clicked.connect(self.theme_clicked.emit)
         self.layout.addWidget(theme_button)
 
-        search_button = QPushButton("Search")
-        search_button.clicked.connect(self.search_clicked.emit)
-        self.layout.addWidget(search_button)
+        ai_model_manager_button = QPushButton("My Chatbots")
+        ai_model_manager_button.clicked.connect(self.ai_model_manager_clicked.emit)
+        self.layout.addWidget(ai_model_manager_button)
 
         self.setLayout(self.layout)
