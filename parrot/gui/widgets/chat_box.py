@@ -9,11 +9,13 @@ class ChatBox(QWidget):
         self.text_input = QTextEdit()
         self.text_input.setPlaceholderText("Type a message...")
 
-        send_button = QPushButton("Send")
-        image_button = QPushButton("Insert Image")
+        self.send_button = QPushButton("Send")
+        self.send_button.clicked.connect(self.send_button_clicked)
 
         layout.addWidget(self.text_input)
-        layout.addWidget(image_button)
-        layout.addWidget(send_button)
+        layout.addWidget(self.send_button)
 
         self.setLayout(layout)
+
+    def send_button_clicked(self):
+        self.text_input.clear()
