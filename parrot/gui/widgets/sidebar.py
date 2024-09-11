@@ -22,5 +22,5 @@ class Sidebar(QWidget):
         chat_list = ChatList()
         self.layout.addWidget(chat_list)
 
-        bottom = BottomBar()
-        self.layout.addWidget(bottom)
+        self.bottom = BottomBar()
+        self.layout.addWidget(self.bottom)
