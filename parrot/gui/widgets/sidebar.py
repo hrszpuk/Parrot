@@ -16,11 +16,13 @@ class Sidebar(QWidget):
         top = TopBar(title="Parrot")
         self.layout.addWidget(top)
 
-        model_list = (ModelList())
-        self.layout.addWidget(model_list)
+        # model_list = (ModelList())
+        # self.layout.addWidget(model_list)
 
         chat_list = ChatList()
         self.layout.addWidget(chat_list)
+
+        self.layout.addStretch()
 
         self.bottom = BottomBar()
         self.layout.addWidget(self.bottom)

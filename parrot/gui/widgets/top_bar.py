@@ -13,6 +13,4 @@ class TopBar(QWidget):
         self.title_label.setStyleSheet("font-size: 18px; font-weight: bold;")
         self.layout.addWidget(self.title_label)
 
-        self.layout.addStretch()
-
         self.setLayout(self.layout)
