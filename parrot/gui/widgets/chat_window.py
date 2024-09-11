@@ -16,6 +16,8 @@ class ChatWindow(QWidget):
         layout.addWidget(self.message_list)
 
         self.chat_box = ChatBox()
+        self.chat_box.message_sent.connect(self.add_message)
+
         layout.addWidget(self.chat_box)
 
         self.setLayout(layout)

@@ -1,7 +1,10 @@
 from PySide6.QtWidgets import QWidget, QTextEdit, QPushButton, QHBoxLayout
+from PySide6.QtCore import Signal
 
 
 class ChatBox(QWidget):
+    message_sent = Signal(str)
+
     def __init__(self):
         super().__init__()
         layout = QHBoxLayout()
@@ -18,4 +21,7 @@ class ChatBox(QWidget):
         self.setLayout(layout)
 
     def send_button_clicked(self):
-        self.text_input.clear()
+        text = self.text_input.toPlainText().strip()
+        if text:
+            self.message_sent.emit(text)
+            self.text_input.clear()
