@@ -15,9 +15,6 @@ class ChatMessage(QWidget):
         self.is_user = is_user
         self.loading = loading
 
-        self.setup_ui()
-
-    def setup_ui(self):
         layout = QHBoxLayout()
 
         icon = QLabel()
