@@ -13,14 +13,14 @@ class Sidebar(QWidget):
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
 
-        top = TopBar(title="Parrot")
-        self.layout.addWidget(top)
+        self.top = TopBar(title="Parrot")
+        self.layout.addWidget(self.top)
 
         # model_list = (ModelList())
         # self.layout.addWidget(model_list)
 
-        chat_list = ChatList()
-        self.layout.addWidget(chat_list)
+        self.chat_list = ChatList()
+        self.layout.addWidget(self.chat_list)
 
         self.layout.addStretch()
 
