@@ -1,8 +1,8 @@
 from PySide6.QtWidgets import *
 
-from parrot.gui.widgets.chat_window import ChatWindow
-from parrot.gui.widgets.model_menu import ModelMenu
-from parrot.gui.widgets.settings_menu import SettingsMenu
+from parrot.gui.widgets.chat import ChatWindow
+from parrot.gui.widgets.my_copilots import ModelMenu
+from parrot.gui.widgets.settings import SettingsMenu
 from parrot.gui.widgets.sidebar import Sidebar
 
 
