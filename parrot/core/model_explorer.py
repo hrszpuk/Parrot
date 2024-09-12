@@ -1,7 +1,7 @@
 from huggingface_hub import HfApi
 
 
-class ModelExplorerFinder:
+class ModelExplorer:
     """Handles both exploring popular models and searching for specific models on Hugging Face."""
 
     def __init__(self):
