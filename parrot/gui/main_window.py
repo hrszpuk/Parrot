@@ -46,6 +46,36 @@ class MainWindow(QMainWindow):
 
         self.setCentralWidget(widget)
 
+    def create_new_chat(self):
+        chat_name = f"New Chat ({len(self.controller.get_chat_sessions())})"
+        self.sidebar_widget.chat_list.add_new_chat(chat_name)
+
+        self.controller.start_new_chat(chat_name)
+
+        self.chat_window.chat_top_bar.title = chat_name
+        self.chat_window.message_list.clear_messages()
+        self.chat_window.chat_box.text_input.setText("")
+
+    def send_message(self):
+        message = self.chat_window.chat_box.get_text()
+
+        self.controller.add_message_to_current_chat("user", message)
+        self.chat_window.add_message(message, is_user=True, loading=False)
+        self.chat_window.chat_box.clear_text()
+
+    def load_chat_history(self, chat_id):
+        self.controller.set_current_chat(chat_id)
+
+        chat_history = self.controller.get_current_chat_history()
+
+        self.chat_window.message_list.clear_messages()
+        for message in chat_history:
+            self.chat_window.message_list.add_message(message[1], message[2])  # (sender, message)
+
+    def closeEvent(self, event):
+        self.controller.close()
+        event.accept()
+
     def open_settings_menu(self):
         self.chat_window.setVisible(False)
         self.sidebar_widget.setVisible(False)
