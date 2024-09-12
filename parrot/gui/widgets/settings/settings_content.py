@@ -1,9 +1,9 @@
 from PySide6.QtWidgets import QStackedWidget
 
-from parrot.gui.widgets.appearance_settings import AppearanceSettings
-from parrot.gui.widgets.chat_settings import ChatSettings
-from parrot.gui.widgets.general_settings import GeneralSettings
-from parrot.gui.widgets.model_settings import ModelSettings
+from parrot.gui.widgets.settings import AppearanceSettings
+from parrot.gui.widgets.settings import ChatSettings
+from parrot.gui.widgets.settings import GeneralSettings
+from parrot.gui.widgets.settings import ModelSettings
 
 
 class SettingsContent(QStackedWidget):

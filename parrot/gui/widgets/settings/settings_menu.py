@@ -1,8 +1,8 @@
 from PySide6.QtWidgets import QWidget, QLabel, QVBoxLayout, QPushButton, QHBoxLayout
 from PySide6.QtCore import Qt, Signal
 
-from parrot.gui.widgets.settings_content import SettingsContent
-from parrot.gui.widgets.settings_sidebar import SettingsSidebar
+from .settings_content import SettingsContent
+from .settings_sidebar import SettingsSidebar
 
 
 class SettingsMenu(QWidget):
