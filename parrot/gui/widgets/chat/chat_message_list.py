@@ -1,7 +1,7 @@
 from PySide6.QtWidgets import QListView, QScrollArea, QWidget, QVBoxLayout, QSizePolicy, QLabel
 from PySide6.QtCore import Qt
 
-from parrot.gui.widgets.chat_message import ChatMessage
+from parrot.gui.widgets.chat import ChatMessage
 
 
 class ChatMessageList(QScrollArea):
@@ -18,5 +18,11 @@ class ChatMessageList(QScrollArea):
 
     def add_message(self, message_widget):
         self.messages_layout.addWidget(message_widget)
+        self.messages_widget.adjustSize()
+        self.verticalScrollBar().setValue(self.verticalScrollBar().maximum())
+
+    def clear_messages(self):
+        for i in reversed(range(self.messages_layout.count())):
+            self.messages_layout.itemAt(i).widget().deleteLater()
         self.messages_widget.adjustSize()
         self.verticalScrollBar().setValue(self.verticalScrollBar().maximum())
