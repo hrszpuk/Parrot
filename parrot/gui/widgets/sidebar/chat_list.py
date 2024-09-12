@@ -4,6 +4,7 @@ from PySide6.QtWidgets import QListView, QListWidget, QVBoxLayout, QListWidgetIt
 
 class ChatList(QWidget):
     chat_selected_signal = Signal(str)
+    new_chat_button_pressed = Signal()
 
     def __init__(self):
         super().__init__()
@@ -14,11 +15,9 @@ class ChatList(QWidget):
         self.title = QLabel("Chats")
         self.layout.addWidget(self.title)
 
-        models = ["Chat 1", "Chat 2", "Chat 3"]
-        for model in models:
-            button = QPushButton(model)
-            button.clicked.connect(self.chat_button_pressed)
-            self.layout.addWidget(button)
+        self.new_chat_button = QPushButton("New Chat")
+        self.new_chat_button.clicked.connect(self.new_chat_button_pressed)
+        self.layout.addWidget(self.new_chat_button)
 
     def chat_button_pressed(self, model_name):
         """Return a slot that emits the model name when the button is clicked."""
@@ -27,3 +26,9 @@ class ChatList(QWidget):
             self.chat_selected_signal.emit(model_name)
 
         return slot
+
+    def add_new_chat(self, model_name):
+        button = QPushButton(model_name)
+        button.clicked.connect(self.chat_button_pressed(model_name))
+        self.layout.addWidget(button)
+        self.layout.update()
