@@ -10,26 +10,26 @@ class ChatWindow(QWidget):
     def __init__(self):
         super().__init__()
 
-        layout = QHBoxLayout()
+        self.layout = QHBoxLayout()
 
-        chat_layout = QVBoxLayout()
-        chat_widget = QWidget()
-        chat_widget.setLayout(chat_layout)
+        self.chat_layout = QVBoxLayout()
+        self.chat_widget = QWidget()
+        self.chat_widget.setLayout(self.chat_layout)
 
-        chat_top_bar = TopBar(title="Chat Name")
-        chat_layout.addWidget(chat_top_bar)
+        self.chat_top_bar = TopBar(title="Chat Name")
+        self.chat_layout.addWidget(self.chat_top_bar)
 
         self.message_list = ChatMessageList()
-        chat_layout.addWidget(self.message_list)
+        self.chat_layout.addWidget(self.message_list)
 
-        chat_box = ChatBox()
-        chat_box.message_sent.connect(self.add_message)
+        self.chat_box = ChatBox()
+        self.chat_box.message_sent.connect(self.add_message)
 
-        chat_layout.addWidget(chat_box)
+        self.chat_layout.addWidget(self.chat_box)
 
-        layout.addWidget(chat_widget)
+        self.layout.addWidget(self.chat_widget)
 
-        self.setLayout(layout)
+        self.setLayout(self.layout)
 
     def add_message(self, text, is_user=True, loading=False):
         message_widget = ChatMessage(text, is_user, loading)
