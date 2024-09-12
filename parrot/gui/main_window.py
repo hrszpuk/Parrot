@@ -1,5 +1,8 @@
+from datetime import datetime
+
 from PySide6.QtWidgets import *
 
+from parrot.core import Controller
 from parrot.gui.widgets.chat import ChatWindow
 from parrot.gui.widgets.my_copilots import ModelMenu
 from parrot.gui.widgets.settings import SettingsMenu
@@ -10,6 +13,8 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
+        self.controller = Controller()
+
         self.setWindowTitle("Parrot")
         self.setGeometry(600, 100, 1400, 800)
         self.show()
@@ -19,6 +24,7 @@ class MainWindow(QMainWindow):
         self.sidebar_widget = Sidebar()
         self.main_layout.addWidget(self.sidebar_widget)
 
+        self.sidebar_widget.chat_list.new_chat_button_pressed.connect(self.create_new_chat)
         self.sidebar_widget.bottom.settings_clicked.connect(self.open_settings_menu)
         self.sidebar_widget.bottom.ai_model_manager_clicked.connect(self.open_copilots_menu)
 
