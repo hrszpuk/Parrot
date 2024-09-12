@@ -23,9 +23,6 @@ class MainWindow(QMainWindow):
         self.sidebar_widget.bottom.ai_model_manager_clicked.connect(self.open_copilots_menu)
 
         self.chat_window = ChatWindow()
-        self.chat_window.add_message("Hello?", is_user=False)
-        self.chat_window.add_message("Hello?", is_user=True)
-        self.chat_window.add_message("Hello?", is_user=False)
         self.main_layout.addWidget(self.chat_window)
 
         self.settings_menu = SettingsMenu()
