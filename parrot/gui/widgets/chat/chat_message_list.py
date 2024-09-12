@@ -1,7 +1,7 @@
 from PySide6.QtWidgets import QListView, QScrollArea, QWidget, QVBoxLayout, QSizePolicy, QLabel
 from PySide6.QtCore import Qt
 
-from parrot.gui.widgets.chat_message import ChatMessage
+from parrot.gui.widgets.chat import ChatMessage
 
 
 class ChatMessageList(QScrollArea):

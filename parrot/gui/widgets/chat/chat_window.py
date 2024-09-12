@@ -1,8 +1,8 @@
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QHBoxLayout
 
-from parrot.gui.widgets.chat_box import ChatBox
-from parrot.gui.widgets.chat_message import ChatMessage
-from parrot.gui.widgets.chat_message_list import ChatMessageList
+from parrot.gui.widgets.chat import ChatBox
+from parrot.gui.widgets.chat import ChatMessage
+from parrot.gui.widgets.chat import ChatMessageList
 from parrot.gui.widgets.top_bar import TopBar
 
 
