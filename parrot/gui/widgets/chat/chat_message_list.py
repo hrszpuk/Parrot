@@ -20,3 +20,9 @@ class ChatMessageList(QScrollArea):
         self.messages_layout.addWidget(message_widget)
         self.messages_widget.adjustSize()
         self.verticalScrollBar().setValue(self.verticalScrollBar().maximum())
+
+    def clear_messages(self):
+        for i in reversed(range(self.messages_layout.count())):
+            self.messages_layout.itemAt(i).widget().deleteLater()
+        self.messages_widget.adjustSize()
+        self.verticalScrollBar().setValue(self.verticalScrollBar().maximum())
