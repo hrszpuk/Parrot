@@ -1,0 +1,8 @@
+[package]
+name = "parrot-backend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tauri = "2.1.1"
+tauri-plugin-window = "2.0.0-alpha.2"
