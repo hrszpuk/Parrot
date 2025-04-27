@@ -1,9 +1,4 @@
 # Parrot
-Download and run open-source models on your own hardware. Use a simple, sleek interface for your own personal chatbots and generative ai.
+An easy to use GUI for installing, managing, and interacting with LLMs from hugging face.
 
-
-## Installation
-
-
-
-## Contributing 
+[WIP]
