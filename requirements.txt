@@ -35,7 +35,7 @@ PyYAML==6.0.2
 regex==2024.7.24
 requests==2.32.3
 safetensors==0.4.5
-setuptools==74.1.2
+setuptools==78.1.1
 sympy==1.13.2
 tokenizers==0.19.1
 tomlkit==0.13.2
