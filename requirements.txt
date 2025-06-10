@@ -33,7 +33,7 @@ pylint==3.2.7
 pytest==8.3.2
 PyYAML==6.0.2
 regex==2024.7.24
-requests==2.32.3
+requests==2.32.4
 safetensors==0.4.5
 setuptools==74.1.2
 sympy==1.13.2
