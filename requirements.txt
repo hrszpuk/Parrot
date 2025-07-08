@@ -41,7 +41,7 @@ tokenizers==0.19.1
 tomlkit==0.13.2
 torch==2.4.1
 tqdm==4.66.5
-transformers==4.44.2
+transformers==4.52.1
 triton==3.0.0
 typing_extensions==4.12.2
 urllib3==2.2.2
